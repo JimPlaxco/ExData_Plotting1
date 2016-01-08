@@ -1,6 +1,5 @@
-## PLOT 4 PROGRAM
+## PLOT 4 PROGRAM - 4 plots
 edata <- read.csv("household_power_consumption.txt",sep=";",na.strings="?")
-##> str(edata)  ## report on file
 ## subset Date: 2007-02-01 and 2007-02-02
 edatasub <-subset(edata, Date == "1/2/2007" | Date=="2/2/2007")
 ## merge date and time  
@@ -17,7 +16,7 @@ plot(edatasub$DTV,edatasub$Global_active_power,type="l",ylab="Global Active Powe
 plot(edatasub$DTV,edatasub$Sub_metering_1,type="l",ylab="Energy sub metering",xlab=" ",col="black")
 lines(edatasub$DTV,edatasub$Sub_metering_2,col="red")
 lines(edatasub$DTV,edatasub$Sub_metering_3,col="blue")
-legend("topright",lty=1,lwd=2,col=c("black","red","blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+legend("topright",lty=1,bty="n",lwd=2,col=c("black","red","blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 ##-----------------------------------------
 ## 3rd plot
 plot(edatasub$DTV,edatasub$Voltage,type="l",ylab="Voltage",xlab="datetime",col="black")
